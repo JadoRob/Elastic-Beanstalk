@@ -5,14 +5,60 @@
                 width: 30%;
                 margin: auto;
             }
-            .heading {
-                background-color: red;
-                color: white;
+            .heading-1 {
+                color: brown;
                 text-align: center;
+            }
+            
+            .heading-2 {
+                color: blue;
+                text-align: center;
+            }
+            .input-section{
+                text-align: center;
+                margin: auto;
+            }
+            .btn-section{
+                text-align: center;
+                margin: auto;
+            }
+            .welcome-section{
+                text-align: center;
+                margin: auto;
             }
         </style>
     </head>
     <div id="container">
-        <h1 class="heading">Hello from NCI => Updated</h1>
+        <h1 class="heading-1">Welcome to NCI</h1>
+        <h2 class="heading-2"><em>Where I learn just because!</em></h2>
     </div>
+    <div class="input-section">
+        <input type="text" id="first-name" placeholder="Enter First name"/>
+        <input type="text" id="last-name" placeholder="Enter Last name"/>
+    </div><br/>
+    <div class="btn-section">
+        <input type="submit" onclick = "printFullName()" value="Submit"/>
+        <input type="reset" onclick = "resetValues()" value="Reset"/>
+    </div>
+    <hr/>
+    <div class = "welcome-section">
+        <h1 id="welcome"></h1>
+    </div>
+    
 </html>
+<script type="text/javascript">
+    function printFullName(){
+        let firstName = document.getElementById("first-name").value;
+        let lastName = document.getElementById("last-name").value;
+        document.getElementById("welcome").innerHTML = "Welcome, " + firstName + " " + lastName;
+        
+    }
+    function resetValues() {
+        inputElements = document.getElementsByTagName('input');
+        for (let i = 0; i < inputElements.length; i++) {
+            inputElements[i].value = " ";
+        }
+        document.getElementById("welcome").innerHTML = "";
+        //console.log(inputElements)
+    }
+</script>
